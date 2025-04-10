@@ -1,0 +1,74 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 96%;
+    --foreground: 0 0% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
+
+    --primary: 198 57% 43%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 95% 56%;
+    --secondary-foreground: 0 0% 12%;
+
+    --accent: 122 39% 64%;
+    --accent-foreground: 0 0% 12%;
+
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 45%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 80%;
+    --input: 0 0% 80%;
+    --ring: 198 57% 43%;
+
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+    font-size: 16px;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-wide;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1;
+  }
+
+  .voice-button {
+    @apply relative inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 hover:bg-primary/90 active:scale-95;
+  }
+
+  .quick-tile {
+    @apply flex flex-col items-center justify-center p-4 rounded-xl bg-white shadow-soft hover:shadow-medium transition-all cursor-pointer;
+  }
+
+  .card-container {
+    @apply rounded-xl bg-white shadow-soft p-6;
+  }
+
+  .footer-link {
+    @apply text-saarthiBlue-600 hover:text-saarthiBlue-800 transition-colors;
+  }
+}
