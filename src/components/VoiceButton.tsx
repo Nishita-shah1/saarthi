@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Mic, Square } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -10,15 +9,14 @@ interface VoiceButtonProps {
   className?: string;
 }
 
-export const VoiceButton: React.FC<VoiceButtonProps> = ({ 
-  size = 'lg', 
-  onResult, 
-  className 
+export const VoiceButton: React.FC<VoiceButtonProps> = ({
+  size = 'lg',
+  onResult,
+  className
 }) => {
   const [isListening, setIsListening] = useState(false);
   const [pulseAnimation, setPulseAnimation] = useState(false);
 
-  // Size mapping
   const sizeClasses = {
     sm: "w-12 h-12 text-xl",
     md: "w-16 h-16 text-2xl",
@@ -28,17 +26,15 @@ export const VoiceButton: React.FC<VoiceButtonProps> = ({
   const handleVoiceButtonClick = () => {
     setIsListening(!isListening);
     setPulseAnimation(!pulseAnimation);
-    
-    // Simulate voice recognition (in a real app, this would use the Web Speech API)
+
     if (!isListening) {
       setTimeout(() => {
         setIsListening(false);
         setPulseAnimation(false);
         if (onResult) {
-          // Simulated response
           onResult("मुझे सरकारी योजनाओं के बारे में जानकारी चाहिए");
         }
-      }, 5000); // Simulate 5 seconds of listening
+      }, 5000);
     }
   };
 
@@ -46,9 +42,9 @@ export const VoiceButton: React.FC<VoiceButtonProps> = ({
     <motion.button
       onClick={handleVoiceButtonClick}
       className={cn(
-        "voice-button relative",
+        "voice-button relative flex items-center justify-center rounded-full bg-primary text-white",
         sizeClasses[size],
-        pulseAnimation && "animate-pulse-gentle",
+        pulseAnimation && "shadow-md",
         className
       )}
       aria-label={isListening ? "स्टॉप रिकॉर्डिंग" : "बोलना शुरू करें"}
@@ -60,17 +56,33 @@ export const VoiceButton: React.FC<VoiceButtonProps> = ({
       ) : (
         <Mic className="h-1/2 w-1/2" />
       )}
-      {pulseAnimation && (
-        <motion.span 
-          className="absolute inset-0 rounded-full bg-primary/30"
-          initial={{ scale: 0.8, opacity: 0.7 }}
-          animate={{ 
-            scale: [1, 1.2, 1], 
-            opacity: [0.7, 0.2, 0.7] 
+
+      {!isListening && (
+        <motion.div
+          className="absolute inset-0 rounded-full bg-primary shadow-lg pointer-events-none"
+          style={{ opacity: 0.6 }}
+          initial={{ scale: 1 }}
+          animate={{ scale: 1.1 }}
+          transition={{
+            repeat: Infinity,
+            duration: 1.5,
+            type: "tween",
+            ease: "easeInOut",
           }}
-          transition={{ 
-            repeat: Infinity, 
-            duration: 1.5 
+        />
+      )}
+
+      {isListening && (
+        <motion.span
+          className="absolute inset-0 rounded-full bg-primary/30 blur-md pointer-events-none"
+          initial={{ scale: 1, opacity: 0.6 }}
+          animate={{
+            scale: [1, 1.5, 1],
+            opacity: [0.6, 0.1, 0.6]
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 1.8
           }}
         />
       )}

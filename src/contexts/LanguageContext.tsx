@@ -5,7 +5,7 @@ export type Language = 'en' | 'hi' | 'bn' | 'te' | 'ta';
 type TranslationKey = 
   // General UI
   | 'welcome' | 'subtitle' | 'tapToAsk' | 'schemes' | 'emergency' | 'jobs' | 'volunteer'
-  | 'downloadPdf' | 'sendToWhatsApp' | 'showMore' | 'showLess' | 'repeat' | 'showDashboard' | 'hideDashboard'
+  | 'downloadPdf' | 'sendToWhatsApp' | 'showMore' | 'showLess' | 'repeat' | 'showDashboard' | 'hideDashboard' | 'pleaseselect' | 'how_can_we_help'
   // Navigation
   | 'home' | 'help' | 'community' | 'about'
   // Schemes page
@@ -34,6 +34,8 @@ const translations: Translations = {
   en: {
     // General UI
     welcome: 'Welcome to Saarthi',
+    pleaseselect: 'Please select to let us help',
+    how_can_we_help:'How can we help?',
     subtitle: 'Your Digital Assistant',
     tapToAsk: 'Tap the microphone and ask anything',
     schemes: 'Schemes',
@@ -124,6 +126,8 @@ const translations: Translations = {
   hi: {
     // General UI
     welcome: 'साथी में आपका स्वागत है',
+    pleaseselect: 'कृपया चुनें ताकि हम मदद कर सकें',
+    how_can_we_help: 'हम कैसे मदद कर सकते हैं?',
     subtitle: 'आपका डिजिटल सहायक',
     tapToAsk: 'माइक्रोफोन पर टैप करें और कुछ भी पूछें',
     schemes: 'योजनाएं',
@@ -214,6 +218,8 @@ const translations: Translations = {
   bn: {
     // General UI
     welcome: 'সাথীতে আপনাকে স্বাগতম',
+    pleaseselect: 'আমাদের সাহায্য করতে নির্বাচন করুন',
+    how_can_we_help: 'আমরা কিভাবে সাহায্য করতে পারি?',
     subtitle: 'আপনার ডিজিটাল সহায়ক',
     tapToAsk: 'মাইক্রোফোনে আলতো চাপ দিন এবং যে কোনো কিছু জিজ্ঞাসা করুন',
     schemes: 'প্রকল্পগুলি',
@@ -305,6 +311,8 @@ const translations: Translations = {
     // General UI
     welcome: 'సాథీకి స్వాగతం',
     subtitle: 'మీ డిజిటల్ సహాయకుడు',
+    pleaseselect: 'Please select to let us help',
+    how_can_we_help: 'మేము ఎలా సహాయం చేయగలము?',
     tapToAsk: 'మైక్రోఫోన్‌ను నొక్కి ఏదైనా అడగండి',
     schemes: 'పథకాలు',
     emergency: 'అత్యవసర',
@@ -395,6 +403,8 @@ const translations: Translations = {
     // General UI
     welcome: 'சாத்தியில் வரவேற்கிறோம்',
     subtitle: 'உங்கள் டிஜிட்டல் உதவியாளர்',
+    pleaseselect: 'எங்களுக்கு உதவ தயவு செய்து தேர்ந்தெடுக்கவும்',
+    how_can_we_help: 'நாங்கள் எப்படி உதவ முடியும்?',
     tapToAsk: 'மைக்ரோஃபோனைத் தட்டி எதையும் கேளுங்கள்',
     schemes: 'திட்டங்கள்',
     emergency: 'அவசரநிலை',
