@@ -125,7 +125,7 @@ const translations: Translations = {
   },
   hi: {
     // General UI
-    welcome: 'साथी में आपका स्वागत है',
+    welcome: 'सार्थीें आपका स्वागत है',
     pleaseselect: 'कृपया चुनें ताकि हम मदद कर सकें',
     how_can_we_help: 'हम कैसे मदद कर सकते हैं?',
     subtitle: 'आपका डिजिटल सहायक',
